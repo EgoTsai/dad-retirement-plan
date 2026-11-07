@@ -1,0 +1,1148 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>爸媽安心養老金規劃本（手機大字版）</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+    :root {
+      --bg-page: #f7f4eb;
+      --bg-card: #ffffff;
+      --bg-subtle: #f1ede2;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --border-color: #d6cfc2;
+      --accent-green: #0f766e;
+      --accent-green-bg: #ccfbf1;
+      --accent-amber: #b45309;
+      --accent-amber-bg: #fef3c7;
+      --accent-blue: #1d4ed8;
+      --accent-blue-bg: #dbeafe;
+      --accent-rose: #be123c;
+      --accent-rose-bg: #ffe4e6;
+      --base-font-size: 18px;
+    }
+
+    body.dark-mode {
+      --bg-page: #0b1120;
+      --bg-card: #1e293b;
+      --bg-subtle: #0f172a;
+      --text-main: #f8fafc;
+      --text-muted: #cbd5e1;
+      --border-color: #334155;
+      --accent-green: #34d399;
+      --accent-green-bg: rgba(16, 185, 129, 0.18);
+      --accent-amber: #fbbf24;
+      --accent-amber-bg: rgba(245, 158, 11, 0.18);
+      --accent-blue: #60a5fa;
+      --accent-blue-bg: rgba(59, 130, 246, 0.18);
+      --accent-rose: #fb7185;
+      --accent-rose-bg: rgba(244, 63, 94, 0.18);
+    }
+
+    body.font-xlarge {
+      --base-font-size: 21px;
+    }
+
+    html {
+      font-size: var(--base-font-size);
+    }
+
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .senior-card {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .senior-subtle {
+      background-color: var(--bg-subtle);
+      border: 1.5px solid var(--border-color);
+      border-radius: 16px;
+    }
+
+    .step-btn {
+      min-width: 52px;
+      min-height: 52px;
+      border-radius: 14px;
+      font-size: 1.35rem;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s ease, background-color 0.15s ease;
+    }
+
+    .step-btn:active {
+      transform: scale(0.94);
+    }
+
+    /* Extra-large Senior-Friendly Slider */
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 14px;
+      border-radius: 999px;
+      background: #cbd5e1;
+      outline: none;
+      cursor: pointer;
+      margin: 12px 0;
+    }
+
+    body.dark-mode input[type="range"] {
+      background: #334155;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #0f766e;
+      border: 4px solid #ffffff;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
+    }
+
+    body.dark-mode input[type="range"]::-webkit-slider-thumb {
+      background: #10b981;
+      border-color: #0f172a;
+    }
+
+    .choice-pill {
+      border: 2px solid var(--border-color);
+      background-color: var(--bg-subtle);
+      color: var(--text-main);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: left;
+    }
+
+    .choice-pill.active {
+      border-color: #0f766e;
+      background-color: var(--accent-green-bg);
+      color: var(--accent-green);
+      box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.2);
+    }
+
+    body.dark-mode .choice-pill.active {
+      border-color: #34d399;
+    }
+
+    .num-input {
+      background-color: var(--bg-card);
+      border: 2px solid var(--border-color);
+      color: var(--text-main);
+      border-radius: 14px;
+      padding: 8px 12px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      text-align: center;
+      width: 135px;
+    }
+
+    .num-input:focus {
+      outline: 3px solid #0f766e;
+    }
+  </style>
+</head>
+<body class="pb-16">
+
+  <!-- Sticky Top Senior Accessibility Bar -->
+  <div class="sticky top-0 z-30 border-b-2" style="background-color: var(--bg-card); border-color: var(--border-color);">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">📔</span>
+        <div>
+          <h1 class="text-lg md:text-xl font-black leading-tight">爸媽安心養老金規劃本</h1>
+          <p class="text-xs font-bold" style="color: var(--text-muted);">專為銀行定存・榮民與國保津貼・北遷養老設計</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button onclick="toggleFontSize()" id="btnFontSize" class="px-3.5 py-2 rounded-xl font-extrabold text-sm border-2 cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-subtle);">
+          🔍 字體：放大特大字
+        </button>
+        <button onclick="toggleTheme()" id="btnTheme" class="px-3.5 py-2 rounded-xl font-extrabold text-sm border-2 cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-subtle);">
+          🌙 切換深色
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Container (Single-Column Mobile-First, 2-Column on Desktop) -->
+  <main class="max-w-4xl mx-auto px-4 pt-5 space-y-6">
+
+    <!-- 1. HERO PASSBOOK SUMMARY CARD (Always visible right at the top on phone) -->
+    <section class="senior-card p-5 md:p-6 space-y-4" style="border-top: 8px solid #0f766e;">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <span class="px-3 py-1 rounded-full text-sm font-black" style="background-color: var(--accent-green-bg); color: var(--accent-green);">
+          🏦 純存銀行・不買股票・保本試算
+        </span>
+        <span class="text-sm font-bold" style="color: var(--text-muted);" id="lblAgeSpanHeader">
+          規劃 20 年：爸爸 75歲 ➔ 95歲（媽媽 74歲 ➔ 94歲）
+        </span>
+      </div>
+
+      <!-- Primary Answer Box: How much can Dad & Mom spend per month? -->
+      <div class="p-4 md:p-5 rounded-2xl" style="background-color: var(--accent-green-bg); border: 2px solid #0f766e;">
+        <div class="text-sm md:text-base font-extrabold" style="color: var(--accent-green);">
+          💡 結論一：在規劃的 <span id="lblHeroYears">20</span> 年內，爸媽每個月「最多可以安心花用」：
+        </div>
+        <div class="flex flex-wrap items-baseline gap-2 mt-1">
+          <span id="valMaxMonthlySpend" class="text-4xl md:text-5xl font-black tracking-tight" style="color: var(--accent-green);">
+            76,800
+          </span>
+          <span class="text-lg font-bold">元 / 月（含房租、生活與醫療照護）</span>
+        </div>
+        <p class="text-sm font-bold mt-2" style="color: var(--text-main);" id="txtMaxSpendBreakdown">
+          其中：政府每月固定發放 <strong>20,000 元</strong> ＋ 從銀行存款與利息每月提領 <strong>56,800 元</strong>，剛好可穩穩用到爸爸 <strong>95 歲</strong>！
+        </p>
+      </div>
+
+      <!-- Secondary Answer Box: Comparing against Current Planned Expenses -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="senior-subtle p-4 space-y-1.5">
+          <span class="text-sm font-bold block" style="color: var(--text-muted);">
+            📌 明年搬到桃園以北後・預計每月總花費
+          </span>
+          <div class="text-2xl md:text-3xl font-black" id="valPlannedMonthlyTotal">
+            62,000 元 / 月
+          </div>
+          <div class="text-xs font-bold" style="color: var(--text-muted);" id="lblPlannedDetail">
+            日常買菜生活 30,000 + 北部房租 20,000 + 媽媽照護醫療 12,000
+          </div>
+          <div class="pt-2 mt-2 border-t flex justify-between items-center text-sm font-extrabold" style="border-color: var(--border-color);">
+            <span>扣掉津貼 20,000 元，每月需領存款：</span>
+            <span id="valMonthlyNeedFromBank" style="color: var(--accent-amber);">42,000 元</span>
+          </div>
+        </div>
+
+        <div class="senior-subtle p-4 space-y-1.5" id="cardEndBalanceBox">
+          <span class="text-sm font-bold block" style="color: var(--text-muted);">
+            🎯 照這樣花，<span id="lblEndYears2">20</span> 年後（爸爸 <span id="lblEndDadAge">95</span> 歲）銀行還剩：
+          </span>
+          <div class="text-2xl md:text-3xl font-black" id="valEndBankBalance" style="color: var(--accent-green);">
+            +382 萬元
+          </div>
+          <div class="text-xs font-bold" id="lblSafetyStatusText" style="color: var(--accent-green);">
+            ✅ 存款非常充裕！每個月還可多花 14,800 元買補品或備用。
+          </div>
+          <div class="pt-2 mt-2 border-t flex justify-between items-center text-sm font-extrabold" style="border-color: var(--border-color);">
+            <span>這筆存款總共可支撐到：</span>
+            <span id="valSustainUntilAge" style="color: var(--accent-blue);">爸爸 103 歲以上</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Buttons for Dad -->
+      <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+        <button onclick="copySummaryForLine()" class="flex-1 py-3.5 px-4 rounded-2xl font-black text-base text-white shadow-md cursor-pointer flex items-center justify-center gap-2" style="background-color: #06c755;">
+          <span>💬 複製試算結果（貼到 LINE 給家人看）</span>
+        </button>
+        <button onclick="resetDefaults()" class="py-3.5 px-4 rounded-2xl font-extrabold text-sm border-2 cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-subtle);">
+          ↺ 恢復預設值
+        </button>
+      </div>
+      <div id="copyToast" class="hidden p-3 rounded-xl text-center font-black text-sm" style="background-color: var(--accent-green-bg); color: var(--accent-green);">
+        ✅ 已複製！現在可以打開 LINE 直接「貼上」傳給兒子或家人囉！
+      </div>
+    </section>
+
+    <!-- 2. STEP-BY-STEP LARGE TOUCH INPUTS FOR DAD -->
+    <section class="senior-card p-5 md:p-6 space-y-6">
+      <div class="border-b-2 pb-3" style="border-color: var(--border-color);">
+        <h2 class="text-xl font-black flex items-center gap-2">
+          <span>👆 第一步：輸入銀行存款與津貼（點按「－ / ＋」即可調整）</span>
+        </h2>
+        <p class="text-sm font-bold mt-0.5" style="color: var(--text-muted);">
+          您調整任何數字，最上面的「每月可花金額」都會自動重算，並自動保存在手機裡
+        </p>
+      </div>
+
+      <!-- Input 1: Bank Savings (萬元) -->
+      <div class="senior-subtle p-4 md:p-5 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <label class="text-lg font-black block">1. 爸媽目前的銀行總存款（萬元）</label>
+            <span class="text-xs font-bold" style="color: var(--text-muted);">
+              99% 在爸爸名下（包含定存、活存、郵局存款總和）
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="stepValue('inSavingsWan', -50)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+            <div class="flex items-center gap-1">
+              <input type="number" id="inSavingsWan" value="1000" min="50" max="10000" step="50" onchange="syncFromInputs('inSavingsWan', 'slSavingsWan')" class="num-input" />
+              <span class="font-black text-lg">萬</span>
+            </div>
+            <button onclick="stepValue('inSavingsWan', 50)" class="step-btn bg-teal-700 text-white">＋</button>
+          </div>
+        </div>
+        <input type="range" id="slSavingsWan" min="100" max="5000" step="50" value="1000" oninput="syncFromSlider('slSavingsWan', 'inSavingsWan')" />
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="text-xs font-bold self-center" style="color: var(--text-muted);">快速點選存款金額：</span>
+          <button onclick="setVal('inSavingsWan', 500)" class="px-3 py-1.5 rounded-xl text-sm font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">500 萬</button>
+          <button onclick="setVal('inSavingsWan', 800)" class="px-3 py-1.5 rounded-xl text-sm font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">800 萬</button>
+          <button onclick="setVal('inSavingsWan', 1000)" class="px-3 py-1.5 rounded-xl text-sm font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">1,000 萬</button>
+          <button onclick="setVal('inSavingsWan', 1500)" class="px-3 py-1.5 rounded-xl text-sm font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">1,500 萬</button>
+          <button onclick="setVal('inSavingsWan', 2000)" class="px-3 py-1.5 rounded-xl text-sm font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">2,000 萬</button>
+        </div>
+      </div>
+
+      <!-- Input 2: Monthly Pension (榮民津貼 + 媽媽國民年金) -->
+      <div class="senior-subtle p-4 md:p-5 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <label class="text-lg font-black block">2. 榮民給與 ＋ 媽媽國民年金（每月合計領多少元？）</label>
+            <span class="text-xs font-bold" style="color: var(--text-muted);">
+              預設每月共 20,000 元，爸爸可依存摺實際入帳金額自由加減
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="stepValue('inPensionMonthly', -1000)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+            <div class="flex items-center gap-1">
+              <input type="number" id="inPensionMonthly" value="20000" min="0" max="150000" step="1000" onchange="syncFromInputs('inPensionMonthly', 'slPensionMonthly')" class="num-input" />
+              <span class="font-black text-lg">元</span>
+            </div>
+            <button onclick="stepValue('inPensionMonthly', 1000)" class="step-btn bg-teal-700 text-white">＋</button>
+          </div>
+        </div>
+        <input type="range" id="slPensionMonthly" min="0" max="60000" step="1000" value="20000" oninput="syncFromSlider('slPensionMonthly', 'inPensionMonthly')" />
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="text-xs font-bold self-center" style="color: var(--text-muted);">常見組合快選：</span>
+          <button onclick="setVal('inPensionMonthly', 8000)" class="px-3 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">8,000 元 (國保+老年年金)</button>
+          <button onclick="setVal('inPensionMonthly', 20000)" class="px-3 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">20,000 元 (榮民就養+國保預設)</button>
+          <button onclick="setVal('inPensionMonthly', 30000)" class="px-3 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">30,000 元 (含子女孝親費/月退)</button>
+        </div>
+      </div>
+
+      <!-- Input 3: Planning Years & Bank Interest Rate -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="senior-subtle p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <div>
+              <label class="text-base font-black block">3. 要規劃未來幾年？（最少 20 年）</label>
+              <span class="text-xs font-bold" style="color: var(--text-muted);" id="lblYearsDesc">
+                爸爸 75 歲 ➔ 95 歲（媽媽 74 歲 ➔ 94 歲）
+              </span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="stepValue('inPlanYears', -1)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+              <input type="number" id="inPlanYears" value="20" min="10" max="35" step="1" onchange="onAnyChange()" class="num-input" style="width: 82px;" />
+              <span class="font-black">年</span>
+              <button onclick="stepValue('inPlanYears', 1)" class="step-btn bg-teal-700 text-white">＋</button>
+            </div>
+          </div>
+          <div class="flex gap-2 pt-1">
+            <button onclick="setVal('inPlanYears', 20)" class="flex-1 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">20年 (至95歲)</button>
+            <button onclick="setVal('inPlanYears', 25)" class="flex-1 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">25年 (至100歲)</button>
+            <button onclick="setVal('inPlanYears', 30)" class="flex-1 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">30年 (至105歲)</button>
+          </div>
+        </div>
+
+        <div class="senior-subtle p-4 space-y-2">
+          <div class="flex items-center justify-between">
+            <div>
+              <label class="text-base font-black block">4. 銀行定存年利率（%）</label>
+              <span class="text-xs font-bold" style="color: var(--text-muted);" id="lblFirstYearInterest">
+                目前一年期定存約 1.7%，每年利息約 17 萬元
+              </span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="stepFloat('inBankRate', -0.1)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+              <input type="number" id="inBankRate" value="1.7" min="0.0" max="5.0" step="0.1" onchange="onAnyChange()" class="num-input" style="width: 90px;" />
+              <span class="font-black">%</span>
+              <button onclick="stepFloat('inBankRate', 0.1)" class="step-btn bg-teal-700 text-white">＋</button>
+            </div>
+          </div>
+          <div class="flex gap-2 pt-1">
+            <button onclick="setVal('inBankRate', 0.8)" class="flex-1 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">活存 0.8%</button>
+            <button onclick="setVal('inBankRate', 1.7)" class="flex-1 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">台灣定存 1.7%</button>
+            <button onclick="setVal('inBankRate', 2.0)" class="flex-1 py-1.5 rounded-xl text-xs font-extrabold border cursor-pointer" style="border-color: var(--border-color); background-color: var(--bg-card);">優利定存 2.0%</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. STEP 2: MOVING NORTH OF TAOYUAN & MOM'S CARE NEEDS -->
+    <section class="senior-card p-5 md:p-6 space-y-6">
+      <div class="border-b-2 pb-3" style="border-color: var(--border-color);">
+        <h2 class="text-xl font-black flex items-center gap-2">
+          <span>🏡 第二步：明年搬到「桃園以北」的住宿與媽媽照護預算</span>
+        </h2>
+        <p class="text-sm font-bold mt-0.5" style="color: var(--text-muted);">
+          今年第 1 年住台南老家（免房租），明年起搬到桃園以北，請點選住宿與照護方式：
+        </p>
+      </div>
+
+      <!-- Northern Housing Mode Selector -->
+      <div class="space-y-3">
+        <label class="text-lg font-black block">1. 明年搬到桃園以北的「居住方式」與每月房租</label>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <button id="housingBtnRent" onclick="selectHousingPreset('rent', 20000)" class="choice-pill active">
+            <div class="text-base font-black">🏢 桃園/雙北租電梯2房</div>
+            <div class="text-xs mt-1 opacity-85">預設租金 20,000 元/月（無障礙電梯大樓，近醫院與子女）</div>
+          </button>
+          <button id="housingBtnFree" onclick="selectHousingPreset('free', 0)" class="choice-pill">
+            <div class="text-base font-black">🏠 住北部自有房 / 子女家</div>
+            <div class="text-xs mt-1 opacity-85">免房租（0 元/月），僅需負擔日常水電管理費</div>
+          </button>
+          <button id="housingBtnVetHome" onclick="selectHousingPreset('vethome', 16000)" class="choice-pill">
+            <div class="text-base font-black">🎖️ 北部榮民之家夫妻安養</div>
+            <div class="text-xs mt-1 opacity-85">桃園/八德/板橋榮家夫妻房，含伙食與醫護約 16,000 元/月</div>
+          </button>
+        </div>
+
+        <div class="senior-subtle p-4 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="font-black text-base block">明年起北部每月住宿/房租費（元/月）：</span>
+            <span class="text-xs font-bold" style="color: var(--text-muted);">（今年住台南老家以 0 元計算，第 2 年起才會計入此筆北部房租）</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="stepValue('inNorthRent', -2000)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+            <input type="number" id="inNorthRent" value="20000" min="0" max="100000" step="1000" onchange="syncFromInputs('inNorthRent', 'slNorthRent')" class="num-input" />
+            <span class="font-black">元</span>
+            <button onclick="stepValue('inNorthRent', 2000)" class="step-btn bg-teal-700 text-white">＋</button>
+          </div>
+        </div>
+        <input type="range" id="slNorthRent" min="0" max="50000" step="1000" value="20000" oninput="syncFromSlider('slNorthRent', 'inNorthRent')" />
+      </div>
+
+      <!-- Tainan Old House Activation Option -->
+      <div class="senior-subtle p-4 space-y-2.5">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <label class="text-base font-black block">💡 台南老家搬走後，有沒有出租貼補北部房租？</label>
+            <span class="text-xs font-bold" style="color: var(--text-muted);">若保留空置請設 0 元；若出租可填寫每月收租金額，若有打算賣掉老家可直接加進上方「銀行總存款」</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="stepValue('inTainanRentIncome', -2000)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+            <input type="number" id="inTainanRentIncome" value="0" min="0" max="60000" step="1000" onchange="onAnyChange()" class="num-input" />
+            <span class="font-black">元</span>
+            <button onclick="stepValue('inTainanRentIncome', 2000)" class="step-btn bg-teal-700 text-white">＋</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daily Living Expense (Food, Utilities, Pocket Money for Two) -->
+      <div class="senior-subtle p-4 md:p-5 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <label class="text-lg font-black block">2. 爸媽兩人每月日常買菜、水電、零用錢（元/月）</label>
+            <span class="text-xs font-bold" style="color: var(--text-muted);">
+              不含房租與照護費的純生活開銷（兩老同住預設 30,000 元/月）
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="stepValue('inLivingMonthly', -2000)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+            <input type="number" id="inLivingMonthly" value="30000" min="10000" max="150000" step="2000" onchange="syncFromInputs('inLivingMonthly', 'slLivingMonthly')" class="num-input" />
+            <span class="font-black">元</span>
+            <button onclick="stepValue('inLivingMonthly', 2000)" class="step-btn bg-teal-700 text-white">＋</button>
+          </div>
+        </div>
+        <input type="range" id="slLivingMonthly" min="15000" max="80000" step="1000" value="30000" oninput="syncFromSlider('slLivingMonthly', 'inLivingMonthly')" />
+      </div>
+
+      <!-- Mom's Mild Dementia Care & Medical Expense -->
+      <div class="space-y-3">
+        <label class="text-lg font-black block">3. 媽媽（輕度失智）與爸爸的每月醫療＆長照預備費</label>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <button id="careBtnMild" onclick="selectCarePreset('mild', 8000)" class="choice-pill">
+            <div class="text-base font-black">🌿 長照2.0 日照中心/居服</div>
+            <div class="text-xs mt-1 opacity-85">輕度失智政府補助 84%，自付約 6,000～8,000 元/月（白天去學堂、晚上回家）</div>
+          </button>
+          <button id="careBtnAvg" onclick="selectCarePreset('avg', 12000)" class="choice-pill active">
+            <div class="text-base font-black">🛡️ 穩健醫療＋日照綜合預留</div>
+            <div class="text-xs mt-1 opacity-85">預設每月預留 12,000 元（含長照日照自付額、營養品、門診交通）</div>
+          </button>
+          <button id="careBtnHelper" onclick="selectCarePreset('helper', 32000)" class="choice-pill">
+            <div class="text-base font-black">👩‍⚕️ 未來聘請外籍看護階段</div>
+            <div class="text-xs mt-1 opacity-85">若中後期需全天外籍看護，薪資＋食宿＋耗材約 32,000 元/月</div>
+          </button>
+        </div>
+
+        <div class="senior-subtle p-4 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="font-black text-base block">每月醫療與失智照護預算（元/月）：</span>
+            <span class="text-xs font-bold" style="color: var(--text-muted);">爸爸具榮民身分至榮總體系就醫免健保部分負擔，主要預留媽媽長照與保健開支</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="stepValue('inCareMonthly', -2000)" class="step-btn bg-slate-200 dark:bg-slate-700 text-slate-900 dark:text-white">－</button>
+            <input type="number" id="inCareMonthly" value="12000" min="0" max="120000" step="1000" onchange="syncFromInputs('inCareMonthly', 'slCareMonthly')" class="num-input" />
+            <span class="font-black">元</span>
+            <button onclick="stepValue('inCareMonthly', 2000)" class="step-btn bg-teal-700 text-white">＋</button>
+          </div>
+        </div>
+        <input type="range" id="slCareMonthly" min="0" max="60000" step="1000" value="12000" oninput="syncFromSlider('slCareMonthly', 'inCareMonthly')" />
+      </div>
+    </section>
+
+    <!-- 4. VISUAL BANK PASSBOOK CHART & YEAR-BY-YEAR TABLE -->
+    <section class="senior-card p-5 md:p-6 space-y-5">
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 pb-3" style="border-color: var(--border-color);">
+        <div>
+          <h2 class="text-xl font-black">📈 第三步：未來 <span id="lblChartYearsTitle">20</span> 年銀行存款餘額變化圖</h2>
+          <p class="text-sm font-bold" style="color: var(--text-muted);">
+            手指點選下方圖表任一年齡，即可看到當年度的存款餘額與利息收入
+          </p>
+        </div>
+      </div>
+
+      <!-- Selected Year Readout Box -->
+      <div class="senior-subtle p-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+        <div>
+          <span class="block font-bold" style="color: var(--text-muted);">檢視年度 / 年齡</span>
+          <span id="hvYearAge" class="text-lg font-black">第 1 年 (爸75/媽74)</span>
+        </div>
+        <div>
+          <span class="block font-bold" style="color: var(--text-muted);">居住地點</span>
+          <span id="hvLocation" class="text-lg font-black" style="color: var(--accent-blue);">台南老家</span>
+        </div>
+        <div>
+          <span class="block font-bold" style="color: var(--text-muted);">當年銀行利息＋津貼</span>
+          <span id="hvIncome" class="text-lg font-black" style="color: var(--accent-green);">+40.7 萬/年</span>
+        </div>
+        <div>
+          <span class="block font-bold" style="color: var(--text-muted);">年底銀行存款餘額</span>
+          <span id="hvEndBalance" class="text-xl font-black" style="color: var(--accent-amber);">986.7 萬元</span>
+        </div>
+      </div>
+
+      <!-- Native SVG Chart -->
+      <div class="w-full overflow-hidden">
+        <svg id="passbookSvg" viewBox="0 0 720 280" class="w-full h-auto select-none"></svg>
+      </div>
+
+      <!-- Expandable Passbook Table -->
+      <details class="senior-subtle p-4">
+        <summary class="font-black text-base cursor-pointer flex items-center justify-between">
+          <span>📖 點此展開「逐年銀行存摺明細表」（從 75 歲到 <span id="lblTableEndAge">95</span> 歲每一年的收支與餘額）</span>
+          <span class="text-sm px-2.5 py-1 rounded-lg" style="background-color: var(--accent-blue-bg); color: var(--accent-blue);">展開明細 ▾</span>
+        </summary>
+        <div class="mt-4 overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b-2" style="border-color: var(--border-color);">
+                <th class="py-2.5 px-2">年度 / 年齡</th>
+                <th class="py-2.5 px-2">居住地</th>
+                <th class="py-2.5 px-2 text-right">年初存款</th>
+                <th class="py-2.5 px-2 text-right">定存年息</th>
+                <th class="py-2.5 px-2 text-right">津貼＋收租</th>
+                <th class="py-2.5 px-2 text-right">全年總開銷</th>
+                <th class="py-2.5 px-2 text-right">年底存款餘額</th>
+              </tr>
+            </thead>
+            <tbody id="passbookTableBody" class="divide-y" style="border-color: var(--border-color);"></tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+
+    <!-- 5. ESSENTIAL CARE & FINANCIAL SAFETY GUIDE FOR DAD & FAMILY -->
+    <section class="senior-card p-5 md:p-6 space-y-5" style="border-top: 8px solid #1d4ed8;">
+      <div>
+        <h2 class="text-xl font-black flex items-center gap-2">
+          <span>🛎️ 第四步：爸媽明年搬到「桃園以北」必看的 4 大重要提醒</span>
+        </h2>
+        <p class="text-sm font-bold mt-0.5" style="color: var(--text-muted);">
+          針對「爸爸 75 歲榮民、媽媽 74 歲輕度失智、99% 存款在爸爸名下、只存銀行」量身整理：
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Guide 1: 99% Deposit in Dad's Name & Bank CD Ladder -->
+        <div class="senior-subtle p-4 space-y-2">
+          <div class="inline-block px-3 py-1 rounded-lg text-xs font-black" style="background-color: var(--accent-amber-bg); color: var(--accent-amber);">
+            🏦 銀行存款最重要提醒
+          </div>
+          <h3 class="text-lg font-black">1. 「99% 存款在爸爸名下」的拆單法與安養防呆</h3>
+          <ul class="text-sm space-y-1.5 list-disc pl-5 font-medium">
+            <li><strong>定存拆單法（每張 50 萬～100 萬）</strong>：不要把上千萬放成單一張大定存！請銀行拆成多張 50 萬或 100 萬的「一年期自動轉期定存（設為按月領息）」。臨時要用大錢時，只要解約其中 1 張，其他張的 1.7% 利息完全不打折！</li>
+            <li><strong>預防臨時住院無法領錢</strong>：因為 99% 的錢都在爸爸帳戶、且媽媽有輕度失智，建議預先將<strong>「1～2 年的生活費（約 100 萬）」</strong>設好自動約定轉帳到專門扣繳房租與生活費的活存帳戶，或至公股銀行（如台銀、合庫、土銀）辦理<strong>「安養信託」</strong>，萬一爸爸需要住院休養，銀行仍能每月自動撥款照顧爸媽。</li>
+          </ul>
+        </div>
+
+        <!-- Guide 2: Mom's Mild Dementia & Moving North of Taoyuan -->
+        <div class="senior-subtle p-4 space-y-2">
+          <div class="inline-block px-3 py-1 rounded-lg text-xs font-black" style="background-color: var(--accent-green-bg); color: var(--accent-green);">
+            🧠 媽媽輕度失智照護（桃園以北）
+          </div>
+          <h3 class="text-lg font-black">2. 搬到桃園以北後，第一時間撥打「1966 長照專線」</h3>
+          <ul class="text-sm space-y-1.5 list-disc pl-5 font-medium">
+            <li><strong>跨縣市無縫轉介長照 2.0</strong>：從台南搬到桃園/新北/台北前 1 個月，可請台南個管師直接將媽媽的長照案號<strong>「跨縣市轉介」</strong>至北部新住處，不必重新排隊太久。</li>
+            <li><strong>善用「失智據點」與「日間照顧中心（日照）」</strong>：輕度失智最怕整天關在家裡退化。桃園與雙北有非常密集的「失智社區服務據點」與「日照中心（老人托兒所）」，白天娃娃車接媽媽去上課、做認知活動、吃午餐，傍晚回家，<strong>政府補助 84%（榮民家庭甚至更高），每月自付僅約 4,000～7,000 元</strong>，更能讓 75 歲的爸爸白天獲得充分休息！</li>
+          </ul>
+        </div>
+
+        <!-- Guide 3: Dad's Veteran (榮民) Exclusive Benefits in the North -->
+        <div class="senior-subtle p-4 space-y-2">
+          <div class="inline-block px-3 py-1 rounded-lg text-xs font-black" style="background-color: var(--accent-blue-bg); color: var(--accent-blue);">
+            🎖️ 榮民爸爸北部專屬福利
+          </div>
+          <h3 class="text-lg font-black">3. 桃園以北的「榮總醫療網」與「榮家夫妻安養資源」</h3>
+          <ul class="text-sm space-y-1.5 list-disc pl-5 font-medium">
+            <li><strong>榮總體系高齡醫學＆失智共照中心</strong>：搬到桃園以北後，強烈建議固定在<strong>台北榮總（石牌）</strong>或<strong>北榮桃園分院</strong>的高齡醫學科/神經內科看診。爸爸具榮民身分享健保部分負擔減免、住院伙食與輔具補助，且北榮的「失智症治療及研究中心」是全台灣最頂尖的團隊。</li>
+            <li><strong>板橋榮家、桃園榮家、八德榮家</strong>：桃園與新北擁有全台灣最好的三座現代化榮民之家，不仅有<strong>「夫妻安養房」</strong>，板橋榮家與桃園榮家更設有專業的<strong>「失智日照中心與失智專區」</strong>，是未來極佳的後盾。</li>
+          </ul>
+        </div>
+
+        <!-- Guide 4: Financial Safety & Anti-Fraud for Mom & Dad -->
+        <div class="senior-subtle p-4 space-y-2">
+          <div class="inline-block px-3 py-1 rounded-lg text-xs font-black" style="background-color: var(--accent-rose-bg); color: var(--accent-rose);">
+            🛡️ 財產安全與防詐騙保護
+          </div>
+          <h3 class="text-lg font-black">4. 保護爸媽老本的 3 個簡單動作</h3>
+          <ul class="text-sm space-y-1.5 list-disc pl-5 font-medium">
+            <li><strong>幫媽媽辦理「金融註記」與「地政異動即時通」</strong>：媽媽有輕度失智，可向聯徵中心申請「不辦貸款/信用卡註記」，並將台南老家設定內政部「地籍異動即時通」（綁定兒子手機簡訊），杜絕任何外人誘騙簽名。</li>
+            <li><strong>定存單設「關閉網銀解約」或「雙人通知」</strong>：爸爸的大額定存單可留在公股銀行（台銀/郵局/合庫），日常只留一張提款卡放 10～20 萬零用錢，既好管帳又絕對安全。</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'parents_retirement_plan_v1';
+
+    const state = {
+      dadAge: 75,
+      momAge: 74,
+      planYears: 20,
+      savingsWan: 1000,         // 1,000 萬預設存款（可自由調）
+      pensionMonthly: 20000,    // 爸媽榮民+國保合計預設 20,000 元/月
+      bankRatePct: 1.7,         // 銀行定存年利率 1.7%
+      northRentMonthly: 20000,  // 明年搬到桃園以北房租預設 20,000 元/月
+      tainanRentIncome: 0,      // 台南老家出租補貼預設 0 元/月
+      livingMonthly: 30000,     // 兩老買菜水電零用預設 30,000 元/月
+      careMonthly: 12000,       // 媽媽輕度失智與醫療預留預設 12,000 元/月
+      rows: [],
+      selectedIdx: 1,           // 預設檢視第 2 年（搬到桃園以北第 1 年）
+      isDark: false,
+      isLargeFont: false
+    };
+
+    function loadSavedState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        ['planYears', 'savingsWan', 'pensionMonthly', 'bankRatePct', 'northRentMonthly', 'tainanRentIncome', 'livingMonthly', 'careMonthly', 'isDark', 'isLargeFont'].forEach(k => {
+          if (parsed[k] !== undefined && parsed[k] !== null && !Number.isNaN(parsed[k])) {
+            state[k] = parsed[k];
+          }
+        });
+        document.getElementById('inSavingsWan').value = state.savingsWan;
+        document.getElementById('slSavingsWan').value = Math.min(5000, state.savingsWan);
+        document.getElementById('inPensionMonthly').value = state.pensionMonthly;
+        document.getElementById('slPensionMonthly').value = Math.min(60000, state.pensionMonthly);
+        document.getElementById('inPlanYears').value = state.planYears;
+        document.getElementById('inBankRate').value = state.bankRatePct;
+        document.getElementById('inNorthRent').value = state.northRentMonthly;
+        document.getElementById('slNorthRent').value = Math.min(50000, state.northRentMonthly);
+        document.getElementById('inTainanRentIncome').value = state.tainanRentIncome;
+        document.getElementById('inLivingMonthly').value = state.livingMonthly;
+        document.getElementById('slLivingMonthly').value = Math.min(80000, state.livingMonthly);
+        document.getElementById('inCareMonthly').value = state.careMonthly;
+        document.getElementById('slCareMonthly').value = Math.min(60000, state.careMonthly);
+
+        if (state.isDark) document.body.classList.add('dark-mode');
+        if (state.isLargeFont) document.body.classList.add('font-xlarge');
+        updateToggleLabels();
+      } catch (e) {
+        // Ignore storage errors
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          planYears: state.planYears,
+          savingsWan: state.savingsWan,
+          pensionMonthly: state.pensionMonthly,
+          bankRatePct: state.bankRatePct,
+          northRentMonthly: state.northRentMonthly,
+          tainanRentIncome: state.tainanRentIncome,
+          livingMonthly: state.livingMonthly,
+          careMonthly: state.careMonthly,
+          isDark: state.isDark,
+          isLargeFont: state.isLargeFont
+        }));
+      } catch (e) {}
+    }
+
+    // Calculate maximum monthly withdrawal from bank savings so balance reaches 0 at end of planYears
+    function calcMaxMonthlyBankWithdrawal(savingsYuan, annualRatePct, years) {
+      if (savingsYuan <= 0 || years <= 0) return 0;
+      const rMonthly = (annualRatePct / 100) / 12;
+      const nMonths = Math.round(years * 12);
+      if (rMonthly <= 0) return savingsYuan / nMonths;
+      const factor = Math.pow(1 + rMonthly, nMonths);
+      return savingsYuan * (rMonthly * factor) / (factor - 1);
+    }
+
+    function runSimulation() {
+      const {
+        dadAge, momAge, planYears, savingsWan, pensionMonthly,
+        bankRatePct, northRentMonthly, tainanRentIncome, livingMonthly, careMonthly
+      } = state;
+
+      const r = bankRatePct / 100;
+      let balanceYuan = savingsWan * 10000;
+      const rows = [];
+      letexhaustedAge = null;
+
+      // Simulate up to max(planYears, 35) to know exact age when money runs out
+      const maxSimYears = Math.max(planYears, 35);
+      for (let y = 1; y <= maxSimYears; y++) {
+        const curDadAge = dadAge + (y - 1);
+        const curMomAge = momAge + (y - 1);
+        const isYearOneTainan = (y === 1); // 今年住台南老家，明年(第2年)起搬到桃園以北
+
+        const startBalanceYuan = balanceYuan;
+        const monthlyRentThisYear = isYearOneTainan ? 0 : northRentMonthly;
+        const monthlyTainanIncomeThisYear = isYearOneTainan ? 0 : tainanRentIncome;
+
+        const annualPensionAndRentIncome = (pensionMonthly + monthlyTainanIncomeThisYear) * 12;
+        const annualTotalExpense = (livingMonthly + careMonthly + monthlyRentThisYear) * 12;
+        const annualNetWithdrawal = annualTotalExpense - annualPensionAndRentIncome; // positive means drawing from bank
+
+        const avgInvestedBalance = Math.max(0, startBalanceYuan - annualNetWithdrawal * 0.5);
+        const annualBankInterest = avgInvestedBalance * r;
+
+        balanceYuan = startBalanceYuan + annualBankInterest - annualNetWithdrawal;
+
+        if (balanceYuan < 0 && exhaustedAge === null) {
+          exhaustedAge = curDadAge;
+        }
+
+        if (y <= planYears) {
+          rows.push({
+            yearNum: y,
+            dadAge: curDadAge,
+            momAge: curMomAge,
+            location: isYearOneTainan ? '台南老家 (今年)' : '桃園以北 (北遷後)',
+            startBalanceYuan,
+            annualBankInterest,
+            annualPensionAndRentIncome,
+            annualTotalExpense,
+            annualNetWithdrawal,
+            endBalanceYuan: balanceYuan
+          });
+        }
+      }
+
+      state.rows = rows;
+
+      // Max monthly spend over planYears
+      const maxBankWithdrawalMonthly = calcMaxMonthlyBankWithdrawal(savingsWan * 10000, bankRatePct, planYears);
+      const maxTotalMonthlySpend = Math.round(pensionMonthly + tainanRentIncome + maxBankWithdrawalMonthly);
+
+      updateUI({
+        maxBankWithdrawalMonthly: Math.round(maxBankWithdrawalMonthly),
+        maxTotalMonthlySpend,
+        exhaustedAge
+      });
+    }
+
+    function updateUI(metrics) {
+      const {
+        dadAge, momAge, planYears, savingsWan, pensionMonthly,
+        bankRatePct, northRentMonthly, tainanRentIncome, livingMonthly, careMonthly, rows
+      } = state;
+
+      const endDadAge = dadAge + planYears;
+      const endMomAge = momAge + planYears;
+      const lastRow = rows[rows.length - 1] || { endBalanceYuan: 0 };
+
+      document.getElementById('lblAgeSpanHeader').textContent =
+        `規劃 ${planYears} 年：爸爸 ${dadAge}歲 ➔ ${endDadAge}歲（媽媽 ${momAge}歲 ➔ ${endMomAge}歲）`;
+      document.getElementById('lblHeroYears').textContent = planYears;
+      document.getElementById('lblYearsDesc').textContent =
+        `爸爸 ${dadAge} 歲 ➔ ${endDadAge} 歲（媽媽 ${momAge} 歲 ➔ ${endMomAge} 歲）`;
+
+      const firstYearInterestWan = (savingsWan * (bankRatePct / 100)).toFixed(1);
+      document.getElementById('lblFirstYearInterest').textContent =
+        `第 1 年銀行利息約 ${firstYearInterestWan} 萬元（平均每月多 ${(savingsWan * 10000 * (bankRatePct / 100) / 12).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',')} 元利息）`;
+
+      // Hero Box 1: Max Spend
+      document.getElementById('valMaxMonthlySpend').textContent = metrics.maxTotalMonthlySpend.toLocaleString('zh-TW');
+      const totalFixedMonthlyIncome = pensionMonthly + tainanRentIncome;
+      document.getElementById('txtMaxSpendBreakdown').innerHTML =
+        `其中：每月固定津貼${tainanRentIncome > 0 ? '＋台南收租' : ''} <strong>${totalFixedMonthlyIncome.toLocaleString('zh-TW')} 元</strong> ＋ 從銀行存款與利息每月提領 <strong>${metrics.maxBankWithdrawalMonthly.toLocaleString('zh-TW')} 元</strong>，可穩穩用到爸爸 <strong>${endDadAge} 歲</strong>！`;
+
+      // Hero Box 2: Planned Expenses in North
+      const plannedNorthMonthly = livingMonthly + northRentMonthly + careMonthly;
+      const netNeedFromBankMonthly = Math.max(0, plannedNorthMonthly - totalFixedMonthlyIncome);
+      document.getElementById('valPlannedMonthlyTotal').textContent = `${plannedNorthMonthly.toLocaleString('zh-TW')} 元 / 月`;
+      document.getElementById('lblPlannedDetail').textContent =
+        `日常買菜生活 ${livingMonthly.toLocaleString('zh-TW')} + 北部房租 ${northRentMonthly.toLocaleString('zh-TW')} + 媽媽照護醫療 ${careMonthly.toLocaleString('zh-TW')}`;
+      document.getElementById('valMonthlyNeedFromBank').textContent = `${netNeedFromBankMonthly.toLocaleString('zh-TW')} 元 / 月`;
+
+      // Hero Box 3: End Balance after planYears
+      document.getElementById('lblEndYears2').textContent = planYears;
+      document.getElementById('lblEndDadAge').textContent = endDadAge;
+      document.getElementById('lblChartYearsTitle').textContent = planYears;
+      document.getElementById('lblTableEndAge').textContent = endDadAge;
+
+      const endBalanceWan = lastRow.endBalanceYuan / 10000;
+      const elEndBal = document.getElementById('valEndBankBalance');
+      const elStatus = document.getElementById('lblSafetyStatusText');
+      const elSustain = document.getElementById('valSustainUntilAge');
+      const diffMonthly = metrics.maxTotalMonthlySpend - plannedNorthMonthly;
+
+      if (endBalanceWan >= 0) {
+        elEndBal.textContent = `還剩 ${Math.round(endBalanceWan).toLocaleString('zh-TW')} 萬元`;
+        elEndBal.style.color = 'var(--accent-green)';
+        elStatus.textContent = `✅ 存款非常安全！比預算上限每月還多出 ${Math.max(0, diffMonthly).toLocaleString('zh-TW')} 元餘裕。`;
+        elStatus.style.color = 'var(--accent-green)';
+        elSustain.textContent = metrics.exhaustedAge ? `爸爸 ${metrics.exhaustedAge} 歲` : `超過爸爸 ${dadAge + 35} 歲以上`;
+      } else {
+        elEndBal.textContent = `不足 ${Math.abs(Math.round(endBalanceWan)).toLocaleString('zh-TW')} 萬元`;
+        elEndBal.style.color = 'var(--accent-rose)';
+        elStatus.textContent = `⚠️ 注意：存款預計在爸爸 ${metrics.exhaustedAge || endDadAge} 歲時用完，建議每月減少 ${Math.abs(diffMonthly).toLocaleString('zh-TW')} 元開支或活化台南老家。`;
+        elStatus.style.color = 'var(--accent-rose)';
+        elSustain.textContent = `約至爸爸 ${metrics.exhaustedAge || endDadAge} 歲`;
+      }
+
+      if (state.selectedIdx >= rows.length) state.selectedIdx = rows.length - 1;
+      renderChart();
+      updateSelectedYearBox(state.selectedIdx);
+      renderTable();
+    }
+
+    function renderChart() {
+      const svg = document.getElementById('passbookSvg');
+      const rows = state.rows;
+      if (!rows || rows.length === 0) return;
+
+      const W = 720;
+      const H = 280;
+      const padL = 68;
+      const padR = 24;
+      const padT = 26;
+      const padB = 42;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+
+      const balancesWan = rows.map(r => r.endBalanceYuan / 10000);
+      const maxVal = Math.max(state.savingsWan * 1.05, ...balancesWan, 100);
+      const minVal = Math.min(0, ...balancesWan);
+
+      const xForIdx = (i) => padL + (rows.length <= 1 ? 0 : (i / (rows.length - 1)) * plotW);
+      const yForVal = (v) => padT + plotH - ((v - minVal) / (maxVal - minVal || 1)) * plotH;
+      const yZero = yForVal(0);
+
+      const gridColor = state.isDark ? '#334155' : '#d6cfc2';
+      const labelColor = state.isDark ? '#cbd5e1' : '#475569';
+      const lineColor = state.isDark ? '#34d399' : '#0f766e';
+
+      let gridHtml = '';
+      for (let s = 0; s <= 4; s++) {
+        const val = minVal + ((maxVal - minVal) * s) / 4;
+        const y = yForVal(val);
+        gridHtml += `
+          <line x1="${padL}" y1="${y}" x2="${W - padR}" y2="${y}" stroke="${gridColor}" stroke-dasharray="4 4" stroke-width="1.5" />
+          <text x="${padL - 8}" y="${y + 5}" text-anchor="end" fill="${labelColor}" font-size="13" font-weight="bold">${Math.round(val).toLocaleString()}萬</text>
+        `;
+      }
+
+      // Zero line if negative exists
+      if (minVal < 0) {
+        gridHtml += `<line x1="${padL}" y1="${yZero}" x2="${W - padR}" y2="${yZero}" stroke="#be123c" stroke-width="2" />`;
+      }
+
+      // Bars for each year (Passbook style bars are easiest for 75yo seniors to read!)
+      let barsHtml = '';
+      const barW = Math.max(8, Math.min(22, (plotW / rows.length) * 0.68));
+      rows.forEach((r, i) => {
+        const valWan = r.endBalanceYuan / 10000;
+        const x = xForIdx(i) - barW / 2;
+        const y = valWan >= 0 ? yForVal(valWan) : yZero;
+        const h = Math.max(3, Math.abs(yZero - yForVal(valWan)));
+        const isSelected = (i === state.selectedIdx);
+        const fill = valWan >= 0
+          ? (isSelected ? '#d97706' : lineColor)
+          : '#be123c';
+        const opacity = isSelected ? '1' : '0.82';
+        barsHtml += `
+          <rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" rx="4" fill="${fill}" fill-opacity="${opacity}" class="cursor-pointer" onclick="selectYearIdx(${i})" onmouseenter="selectYearIdx(${i})" />
+        `;
+      });
+
+      // X-axis labels
+      let xAxisHtml = '';
+      rows.forEach((r, i) => {
+        if (i === 0 || i === rows.length - 1 || r.dadAge % 5 === 0) {
+          const x = xForIdx(i);
+          xAxisHtml += `<text x="${x}" y="${H - 12}" text-anchor="middle" fill="${labelColor}" font-size="13" font-weight="bold">爸${r.dadAge}歲</text>`;
+        }
+      });
+
+      // Milestone label for Year 2 (Move to North of Taoyuan)
+      let moveMarkerHtml = '';
+      if (rows.length > 1) {
+        const mx = xForIdx(1);
+        moveMarkerHtml = `
+          <line x1="${mx}" y1="${padT}" x2="${mx}" y2="${H - padB}" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="4 3" />
+          <rect x="${mx - 58}" y="${padT - 4}" width="116" height="22" rx="6" fill="#1d4ed8" />
+          <text x="${mx}" y="${padT + 11}" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">76歲搬到桃園以北</text>
+        `;
+      }
+
+      svg.innerHTML = `
+        ${gridHtml}
+        ${barsHtml}
+        ${moveMarkerHtml}
+        ${xAxisHtml}
+      `;
+    }
+
+    function selectYearIdx(idx) {
+      state.selectedIdx = idx;
+      renderChart();
+      updateSelectedYearBox(idx);
+    }
+
+    function updateSelectedYearBox(idx) {
+      const r = state.rows[idx];
+      if (!r) return;
+      document.getElementById('hvYearAge').textContent = `第 ${r.yearNum} 年 (爸${r.dadAge}歲 / 媽${r.momAge}歲)`;
+      document.getElementById('hvLocation').textContent = r.location;
+      const totalInWan = (r.annualBankInterest + r.annualPensionAndRentIncome) / 10000;
+      document.getElementById('hvIncome').textContent = `+${totalInWan.toFixed(1)} 萬/年`;
+      const endWan = r.endBalanceYuan / 10000;
+      const elEnd = document.getElementById('hvEndBalance');
+      elEnd.textContent = `${endWan >= 0 ? '' : '不足 '}${Math.abs(endWan).toFixed(1)} 萬元`;
+      elEnd.style.color = endWan >= 0 ? 'var(--accent-amber)' : 'var(--accent-rose)';
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('passbookTableBody');
+      tbody.innerHTML = state.rows.map(r => {
+        const startWan = (r.startBalanceYuan / 10000).toFixed(1);
+        const intWan = (r.annualBankInterest / 10000).toFixed(1);
+        const penWan = (r.annualPensionAndRentIncome / 10000).toFixed(1);
+        const expWan = (r.annualTotalExpense / 10000).toFixed(1);
+        const endWan = (r.endBalanceYuan / 10000).toFixed(1);
+        const isPos = r.endBalanceYuan >= 0;
+        return `
+          <tr>
+            <td class="py-2.5 px-2 font-black">第${r.yearNum}年 (爸${r.dadAge}/媽${r.momAge})</td>
+            <td class="py-2.5 px-2 font-bold">${r.yearNum === 1 ? '台南老家' : '桃園以北'}</td>
+            <td class="py-2.5 px-2 text-right font-bold">${startWan} 萬</td>
+            <td class="py-2.5 px-2 text-right font-bold" style="color: var(--accent-green);">+${intWan} 萬</td>
+            <td class="py-2.5 px-2 text-right font-bold" style="color: var(--accent-blue);">+${penWan} 萬</td>
+            <td class="py-2.5 px-2 text-right font-bold" style="color: var(--accent-rose);">-${expWan} 萬</td>
+            <td class="py-2.5 px-2 text-right font-black" style="color: ${isPos ? 'var(--accent-green)' : 'var(--accent-rose)'};">${endWan} 萬</td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Helper Functions for Interactive Controls
+    function syncFromInputs(inputId, sliderId) {
+      const val = parseFloat(document.getElementById(inputId).value) || 0;
+      const sl = document.getElementById(sliderId);
+      if (sl) sl.value = val;
+      onAnyChange();
+    }
+
+    function syncFromSlider(sliderId, inputId) {
+      const val = parseFloat(document.getElementById(sliderId).value) || 0;
+      const inp = document.getElementById(inputId);
+      if (inp) inp.value = val;
+      onAnyChange();
+    }
+
+    function stepValue(inputId, delta) {
+      const inp = document.getElementById(inputId);
+      const min = parseFloat(inp.min) || 0;
+      const max = parseFloat(inp.max) || 999999;
+      let val = (parseFloat(inp.value) || 0) + delta;
+      val = Math.max(min, Math.min(max, val));
+      inp.value = Math.round(val);
+      const sliderMap = {
+        inSavingsWan: 'slSavingsWan',
+        inPensionMonthly: 'slPensionMonthly',
+        inNorthRent: 'slNorthRent',
+        inLivingMonthly: 'slLivingMonthly',
+        inCareMonthly: 'slCareMonthly'
+      };
+      if (sliderMap[inputId]) {
+        document.getElementById(sliderMap[inputId]).value = val;
+      }
+      onAnyChange();
+    }
+
+    function stepFloat(inputId, delta) {
+      const inp = document.getElementById(inputId);
+      const min = parseFloat(inp.min) || 0;
+      const max = parseFloat(inp.max) || 20;
+      let val = (parseFloat(inp.value) || 0) + delta;
+      val = Math.max(min, Math.min(max, val));
+      inp.value = val.toFixed(1);
+      onAnyChange();
+    }
+
+    function setVal(inputId, val) {
+      document.getElementById(inputId).value = val;
+      const sliderMap = {
+        inSavingsWan: 'slSavingsWan',
+        inPensionMonthly: 'slPensionMonthly',
+        inNorthRent: 'slNorthRent',
+        inLivingMonthly: 'slLivingMonthly',
+        inCareMonthly: 'slCareMonthly'
+      };
+      if (sliderMap[inputId]) {
+        document.getElementById(sliderMap[inputId]).value = val;
+      }
+      onAnyChange();
+    }
+
+    function selectHousingPreset(mode, rentVal) {
+      document.getElementById('housingBtnRent').classList.toggle('active', mode === 'rent');
+      document.getElementById('housingBtnFree').classList.toggle('active', mode === 'free');
+      document.getElementById('housingBtnVetHome').classList.toggle('active', mode === 'vethome');
+      setVal('inNorthRent', rentVal);
+    }
+
+    function selectCarePreset(mode, careVal) {
+      document.getElementById('careBtnMild').classList.toggle('active', mode === 'mild');
+      document.getElementById('careBtnAvg').classList.toggle('active', mode === 'avg');
+      document.getElementById('careBtnHelper').classList.toggle('active', mode === 'helper');
+      setVal('inCareMonthly', careVal);
+    }
+
+    function onAnyChange() {
+      state.savingsWan = Math.max(0, parseFloat(document.getElementById('inSavingsWan').value) || 0);
+      state.pensionMonthly = Math.max(0, parseFloat(document.getElementById('inPensionMonthly').value) || 0);
+      state.planYears = Math.max(5, Math.min(40, parseInt(document.getElementById('inPlanYears').value, 10) || 20));
+      state.bankRatePct = Math.max(0, parseFloat(document.getElementById('inBankRate').value) || 0);
+      state.northRentMonthly = Math.max(0, parseFloat(document.getElementById('inNorthRent').value) || 0);
+      state.tainanRentIncome = Math.max(0, parseFloat(document.getElementById('inTainanRentIncome').value) || 0);
+      state.livingMonthly = Math.max(0, parseFloat(document.getElementById('inLivingMonthly').value) || 0);
+      state.careMonthly = Math.max(0, parseFloat(document.getElementById('inCareMonthly').value) || 0);
+
+      saveState();
+      runSimulation();
+    }
+
+    function toggleTheme() {
+      state.isDark = !state.isDark;
+      document.body.classList.toggle('dark-mode', state.isDark);
+      updateToggleLabels();
+      saveState();
+      renderChart();
+    }
+
+    function toggleFontSize() {
+      state.isLargeFont = !state.isLargeFont;
+      document.body.classList.toggle('font-xlarge', state.isLargeFont);
+      updateToggleLabels();
+      saveState();
+    }
+
+    function updateToggleLabels() {
+      document.getElementById('btnTheme').textContent = state.isDark ? '☀️ 切換明亮' : '🌙 切換深色';
+      document.getElementById('btnFontSize').textContent = state.isLargeFont ? '🔍 字體：標準大字' : '🔍 字體：放大特大字';
+    }
+
+    function resetDefaults() {
+      localStorage.removeItem(STORAGE_KEY);
+      state.planYears = 20;
+      state.savingsWan = 1000;
+      state.pensionMonthly = 20000;
+      state.bankRatePct = 1.7;
+      state.northRentMonthly = 20000;
+      state.tainanRentIncome = 0;
+      state.livingMonthly = 30000;
+      state.careMonthly = 12000;
+
+      document.getElementById('inSavingsWan').value = 1000;
+      document.getElementById('slSavingsWan').value = 1000;
+      document.getElementById('inPensionMonthly').value = 20000;
+      document.getElementById('slPensionMonthly').value = 20000;
+      document.getElementById('inPlanYears').value = 20;
+      document.getElementById('inBankRate').value = 1.7;
+      document.getElementById('inNorthRent').value = 20000;
+      document.getElementById('slNorthRent').value = 20000;
+      document.getElementById('inTainanRentIncome').value = 0;
+      document.getElementById('inLivingMonthly').value = 30000;
+      document.getElementById('slLivingMonthly').value = 30000;
+      document.getElementById('inCareMonthly').value = 12000;
+      document.getElementById('slCareMonthly').value = 12000;
+
+      selectHousingPreset('rent', 20000);
+      selectCarePreset('avg', 12000);
+      onAnyChange();
+    }
+
+    function copySummaryForLine() {
+      const endDadAge = state.dadAge + state.planYears;
+      const endMomAge = state.momAge + state.planYears;
+      const lastRow = state.rows[state.rows.length - 1] || { endBalanceYuan: 0 };
+      const endWan = Math.round(lastRow.endBalanceYuan / 10000);
+      const plannedTotal = state.livingMonthly + state.northRentMonthly + state.careMonthly;
+      const maxSpend = document.getElementById('valMaxMonthlySpend').textContent;
+
+      const text = [
+        `📔【爸媽安心養老金試算摘要】`,
+        `・規劃期間：${state.planYears} 年（爸 75➔${endDadAge}歲 / 媽 74➔${endMomAge}歲）`,
+        `・銀行總存款：${state.savingsWan.toLocaleString()} 萬元（定存利率 ${state.bankRatePct}%）`,
+        `・每月榮民＋國保津貼：${state.pensionMonthly.toLocaleString()} 元/月`,
+        `・明年北遷桃園以北每月預計開銷：共 ${plannedTotal.toLocaleString()} 元/月`,
+        `  （生活買菜 ${state.livingMonthly.toLocaleString()} + 北部房租 ${state.northRentMonthly.toLocaleString()} + 媽媽失智照護與醫療 ${state.careMonthly.toLocaleString()}）`,
+        `----------------------`,
+        `💡 試算結果：`,
+        `1. 每月最高可安心花用上限：${maxSpend} 元/月`,
+        `2. 照預計開銷花用，${state.planYears} 年後（爸爸 ${endDadAge} 歲）銀行存款：${endWan >= 0 ? '還剩 ' + endWan.toLocaleString() + ' 萬元 ✅' : '不足 ' + Math.abs(endWan).toLocaleString() + ' 萬元 ⚠️'}`
+      ].join('\n');
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+
+      const toast = document.getElementById('copyToast');
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 4000);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadSavedState();
+      runSimulation();
+    });
+  </script>
+</body>
+</html>
+
